@@ -40,6 +40,7 @@
         this.ctx = this.canvas.getContext('2d');
 
         // Draw on canvas...
+
       }
     });
   </script>
@@ -56,6 +57,11 @@
     embedded
     arjs="trackingMethod: best; sourceType: webcam;debugUIEnabled: false;"
   >
+
+
+      <a-assets id="a-assets">
+<video id="my-video" src="http://108.34.179.41/mjpg/video.mjpg" autoplay="true">
+      </a-assets>
     <!-- we use cors proxy to avoid cross-origin problems -->
     <a-nft
       type="nft"
@@ -68,12 +74,9 @@
 
 
 
-    <a-assets id="a-assets">
 
-    </a-assets>
-
-    <a-entity geometry="primitive: plane" material="src: #p5canvas"
-              draw-canvas="my-canvas"></a-entity>
+    <a-entity geometry="primitive: plane" material="src: #my-video"
+          ></a-entity>
 
       <!-- <a-entity
         gltf-model="https://arjs-cors-proxy.herokuapp.com/https://raw.githack.com/AR-js-org/AR.js/master/aframe/examples/image-tracking/nft/trex/scene.gltf"
